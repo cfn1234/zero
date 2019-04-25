@@ -1,0 +1,21 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/util
+        http://www.springframework.org/schema/util/spring-util-4.0.xsd"
+>
+    <context:annotation-config/>
+    <!-- 自动扫描web包 ,将带有注解的类 纳入spring容器管理 -->
+    <context:component-scan base-package="com.zero"></context:component-scan>
+
+    <util:map id="mapUtil" map-class="java.util.HashMap">
+        <entry key="Key1" value="1"/>
+        <entry key="Key2" value="2"/>
+        <entry key="Key3" value="3"/>
+    </util:map>
+    <import resource="applicationContext-redis.xml" />
+</beans>
