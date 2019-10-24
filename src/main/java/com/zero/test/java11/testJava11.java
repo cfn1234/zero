@@ -13,7 +13,7 @@ import java.net.URL;
  * @see [相关类/方法]（可选）
  * @since [产品/模块版本] （可选）
  */
-public class testJava11 {
+public class  testJava11 {
     public static void main(String[] args) {
         try {
             var url = new URL("http://www.oracle.com/");

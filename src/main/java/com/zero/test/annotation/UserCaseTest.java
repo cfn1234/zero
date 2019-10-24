@@ -16,7 +16,7 @@ import java.util.List;
  */
 public class UserCaseTest {
     public static void main(String[] args) {
-        List<Integer> useCases = new ArrayList<Integer>();
+        List<Integer> useCases = new ArrayList<>();
         Collections.addAll(useCases, 47, 48, 49, 50);
         trackUseCases(useCases, PasswordUtils.class);
     }
@@ -28,7 +28,7 @@ public class UserCaseTest {
             if (uc != null) {
                 System.out.println("Found Use Case:" + uc.id() + " "
                         + uc.description());
-                useCases.remove(new Integer(uc.id()));
+                useCases.remove(Integer.valueOf(uc.id()));
             }
         }
         for (int i : useCases) {

@@ -10,6 +10,7 @@ package com.zero.test.Default;
  * @since [产品/模块版本] （可选）
  */
 public class DefaultImpl implements Default {
+
     @Override
     public void method() {
         System.out.println("method in Class");
