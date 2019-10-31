@@ -1,5 +1,5 @@
-import com.zero.CdPlayerConfig;
-import com.zero.CompactDisc;
+import com.zero.spring.SpringApplication;
+import com.zero.spring.CompactDisc;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,8 +17,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * @since [产品/模块版本] （可选）
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = CdPlayerConfig.class)
+@ContextConfiguration(classes = SpringApplication.class)
 public class CdplayerTest {
+
     @Autowired
     private CompactDisc compactDisc;
 

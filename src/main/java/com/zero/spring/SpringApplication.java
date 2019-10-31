@@ -1,4 +1,4 @@
-package com.zero;
+package com.zero.spring;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
@@ -14,7 +14,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @since [产品/模块版本] （可选）
  */
 @ComponentScan
-public class CdPlayerConfig {
+public class SpringApplication {
 
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("/spring/applicationContext.xml");
