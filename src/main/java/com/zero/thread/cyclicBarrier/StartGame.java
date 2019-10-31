@@ -1,4 +1,4 @@
-package com.zero.test.thread.cyclicBarrier;
+package com.zero.thread.cyclicBarrier;
 
 import java.io.IOException;
 import java.util.concurrent.CyclicBarrier;

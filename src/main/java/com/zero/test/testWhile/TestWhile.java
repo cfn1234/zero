@@ -2,7 +2,7 @@ package com.zero.test.testWhile;
 
 /**
  * <br>
- * 〈功能详细描述〉
+ * 〈功能详细描述〉--测试while
  * test.testWhile
  *
  * @author 17112411 2018/9/14 10:30

@@ -1,4 +1,4 @@
-package com.zero.test.thread;
+package com.zero.thread;
 
 /**
  * <br>

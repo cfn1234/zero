@@ -1,4 +1,4 @@
-package com.zero.test.thread.reentrantLock;
+package com.zero.thread.reentrantLock;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
