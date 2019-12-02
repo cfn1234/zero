@@ -17,13 +17,13 @@ import java.util.Properties;
  */
 public class MyProducer {
     //发送消息的topic
-    public static final String HASHLEAF_KAFKA_TOPIC = "yk_cust_str_lable";
+    public static final String HASHLEAF_KAFKA_TOPIC = "partopic";
     private final Producer<String, String> producer;
 
     public MyProducer() {
         Properties props = new Properties();
         //指定代理服务器的地址
-        props.put("metadata.broker.list", "kafkaprexg01broker01.cnsuning.com:9092,kafkaprexg01broker02.cnsuning.com:9092,kafkaprexg01broker03.cnsuning.com:9092");
+        props.put("metadata.broker.list", "192.168.50:9092");
 
         //配置value的序列化类
         props.put("serializer.class", "kafka.serializer.StringEncoder");

@@ -1,4 +1,4 @@
-package com.zero.test.designpatterns.abstractFactory;
+package com.zero.test.designpatterns.factory.abstractfactory;
 
 import com.zero.test.designpatterns.factory.Sender;
 

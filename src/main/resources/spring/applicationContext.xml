@@ -17,5 +17,5 @@
         <entry key="Key2" value="2"/>
         <entry key="Key3" value="3"/>
     </util:map>
-    <import resource="applicationContext-redis.xml" />
+    <import resource="applicationContext-redis.xml"/>
 </beans>

@@ -2,7 +2,7 @@ package com.zero.test.designpatterns.singleCase;
 
 /**
  * <br>
- * 〈功能详细描述〉
+ * 〈功能详细描述〉--单例模式
  * test.designpatterns.singleCase
  *
  * @author 17112411 2018/12/26 16:33
