@@ -1,4 +1,4 @@
-package com.zero.designpatterns.singleCase;
+package com.zero.designpatterns.singlecase;
 
 /**
  * <br>

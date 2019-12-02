@@ -11,5 +11,8 @@ package com.zero.designpatterns.factory;
  */
 public interface Sender {
 
+    /**
+     * 发送
+     */
     void send();
 }

@@ -7,16 +7,14 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.data.redis.connection.RedisConnection;
 import org.springframework.data.redis.core.RedisCallback;
 import org.springframework.data.redis.core.RedisTemplate;
-import redis.clients.jedis.Pipeline;
 
 import javax.annotation.Nullable;
 import javax.annotation.PostConstruct;
-import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.List;
 
 /**
- * <br>
+ * <br>布隆过滤器
  * 〈功能详细描述〉
  * com.zero.filter
  *
@@ -25,6 +23,8 @@ import java.util.List;
  * @since [产品/模块版本] （可选）
  */
 public class BloomFilter {
+    //布隆过滤器的键在Redis中的前缀 利用它可以统计过滤器对Redis的使用情况
+    private static String redisKeyPrefix = "bf:";
     /**
      * (自动注入redisTemplet)
      */
@@ -34,8 +34,14 @@ public class BloomFilter {
     private long expectedInsertions = 1000;
     //可接受的错误率
     private double fpp = 0.001F;
-    //布隆过滤器的键在Redis中的前缀 利用它可以统计过滤器对Redis的使用情况
-    private static String redisKeyPrefix = "bf:";
+    //bit数组长度
+    private long numBits = optimalNumOfBits(expectedInsertions, fpp);
+    //hash函数数量
+    private int numHashFunctions = optimalNumOfHashFunctions(expectedInsertions, numBits);
+
+    private static String getRedisKey(String where) {
+        return redisKeyPrefix + where;
+    }
 
     //利用该初始化方法从Redis连接池中获取一个Redis链接
     @PostConstruct
@@ -53,11 +59,6 @@ public class BloomFilter {
     public void setRedisKeyPrefix(String redisKeyPrefix) {
         redisKeyPrefix = redisKeyPrefix;
     }
-
-    //bit数组长度
-    private long numBits = optimalNumOfBits(expectedInsertions, fpp);
-    //hash函数数量
-    private int numHashFunctions = optimalNumOfHashFunctions(expectedInsertions, numBits);
 
     //计算hash函数个数 方法来自guava
     private int optimalNumOfHashFunctions(long n, long m) {
@@ -90,7 +91,7 @@ public class BloomFilter {
                 return null;
             }
         });
-        result =!List.contains(false);
+        result = !List.contains(false);
         if (!result) {
             put(where, key);
         }
@@ -141,10 +142,6 @@ public class BloomFilter {
     private long hash(String key) {
         Charset charset = Charset.forName("UTF-8");
         return Hashing.murmur3_128().hashObject(key, Funnels.stringFunnel(charset)).asLong();
-    }
-
-    private static String getRedisKey(String where) {
-        return redisKeyPrefix + where;
     }
 
 }

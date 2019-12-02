@@ -1,4 +1,4 @@
-package com.zero.test.prototype;
+package com.zero.designpatterns.prototype;
 
 /**
  * <br>

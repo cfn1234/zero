@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.TreeSet;
 
 /**
- * <br>
+ * <br>--set
  * 〈功能详细描述〉
  *
  * @author 17112411 on 2018/4/9.
@@ -29,7 +29,10 @@ public class TreeSetIteratorTest {
         foreachTreeSet(set);
     }
 
-    // 顺序遍历TreeSet
+    /**
+     * 顺序遍历TreeSet
+     * @param set
+     */
     public static void ascIteratorThroughIterator(TreeSet set) {
         System.out.print("\n ---- Ascend Iterator ----\n");
         for(Iterator iter = set.iterator(); iter.hasNext(); ) {
