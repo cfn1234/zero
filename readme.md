@@ -14,6 +14,7 @@
 ### 3.java11的特性
 
 ### algorithm:算法整理
-
-
     冒泡算法
+    
+## 包名
+    genericity:泛型
