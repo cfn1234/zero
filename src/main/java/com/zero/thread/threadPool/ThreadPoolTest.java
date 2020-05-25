@@ -29,7 +29,7 @@ public class ThreadPoolTest {
 }
 
 class MyTask implements Runnable {
-    private int taskNum;
+    private final int taskNum;
 
     public MyTask(int num) {
         this.taskNum = num;
@@ -39,7 +39,7 @@ class MyTask implements Runnable {
     public void run() {
         System.out.println("正在执行task " + taskNum);
         try {
-            Thread.currentThread().sleep(4000);
+            Thread.sleep(4000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

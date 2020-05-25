@@ -12,5 +12,5 @@ import com.zero.designates.factory.Sender;
  * @since [产品/模块版本] （可选）
  */
 public interface Provider {
-    public Sender produce();
+	Sender produce();
 }

@@ -11,6 +11,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import javax.annotation.Nullable;
 import javax.annotation.PostConstruct;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 /**
@@ -24,20 +25,21 @@ import java.util.List;
  */
 public class BloomFilter {
     //布隆过滤器的键在Redis中的前缀 利用它可以统计过滤器对Redis的使用情况
-    private static String redisKeyPrefix = "bf:";
+    private static final String redisKeyPrefix = "bf:";
     /**
      * (自动注入redisTemplet)
      */
     @Autowired
     private RedisTemplate<String, Object> redisTemplate;
+    
     //预计插入量
     private long expectedInsertions = 1000;
     //可接受的错误率
     private double fpp = 0.001F;
     //bit数组长度
-    private long numBits = optimalNumOfBits(expectedInsertions, fpp);
+    private final long numBits = optimalNumOfBits(expectedInsertions, fpp);
     //hash函数数量
-    private int numHashFunctions = optimalNumOfHashFunctions(expectedInsertions, numBits);
+    private final int numHashFunctions = optimalNumOfHashFunctions(expectedInsertions, numBits);
 
     private static String getRedisKey(String where) {
         return redisKeyPrefix + where;
@@ -46,6 +48,7 @@ public class BloomFilter {
     //利用该初始化方法从Redis连接池中获取一个Redis链接
     @PostConstruct
     public void init() {
+    
     }
 
     public void setExpectedInsertions(long expectedInsertions) {
@@ -140,8 +143,7 @@ public class BloomFilter {
      * 获取一个hash值 方法来自guava
      */
     private long hash(String key) {
-        Charset charset = Charset.forName("UTF-8");
+        Charset charset = StandardCharsets.UTF_8;
         return Hashing.murmur3_128().hashObject(key, Funnels.stringFunnel(charset)).asLong();
     }
-
 }

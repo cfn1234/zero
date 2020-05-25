@@ -20,7 +20,7 @@ public class BlockingQueueTest {
      */
     public static class Basket{
         // 篮子，能够容纳3个苹果
-        BlockingQueue<String> basket = new ArrayBlockingQueue<String>(3);
+        BlockingQueue<String> basket = new ArrayBlockingQueue<>(3);
 
         // 生产苹果，放入篮子
         public void produce() throws InterruptedException{
