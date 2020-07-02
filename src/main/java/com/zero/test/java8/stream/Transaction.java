@@ -1,4 +1,4 @@
-package com.zero.test.java8;
+package com.zero.test.java8.stream;
 
 /**
  * com.zero.test.java8
