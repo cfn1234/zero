@@ -7,6 +7,7 @@ package com.zero.designates.observed;
  * @Date 2019-12-02
  */
 public class RunTest {
+    
     public static void main(String[] args) {
         DevelopmentProgressData developmentProgressData = new DevelopmentProgressData();
         ProductManagerObserver productManagerObserver = new ProductManagerObserver(developmentProgressData);

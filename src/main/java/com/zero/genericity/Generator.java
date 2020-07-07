@@ -11,4 +11,5 @@ public interface Generator<T> {
      * @return
      */
     T next();
+    
 }

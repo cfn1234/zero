@@ -10,7 +10,7 @@ package com.zero.genericity;
 public class Generic<T> {
 
     //key这个成员变量的类型为T,T的类型由外部指定
-    private T key;
+    private final T key;
 
     public Generic(T key) { //泛型构造方法形参key的类型也为T，T的类型由外部指定
         this.key = key;
@@ -20,7 +20,7 @@ public class Generic<T> {
         //泛型的类型参数只能是类类型（包括自定义类），不能是简单类型
 
         //传入的实参类型需与泛型的类型参数类型相同，即为Integer.
-        Generic<Integer> genericInteger = new Generic<Integer>(123456);
+        Generic<Integer> genericInteger = new Generic<>(123456);
         //传入的实参类型需与泛型的类型参数类型相同，即为String.
         Generic<String> genericString = new Generic<String>("key_vlaue");
         System.out.println("泛型测试,key is " + genericInteger.getKey());
