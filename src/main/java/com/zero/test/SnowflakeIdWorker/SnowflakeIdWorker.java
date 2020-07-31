@@ -65,12 +65,12 @@ public class SnowflakeIdWorker {
     /**
      * 工作机器ID(0~31)
      */
-    private long workerId;
-
+    private final long workerId;
+    
     /**
      * 数据中心ID(0~31)
      */
-    private long datacenterId;
+    private final long datacenterId;
 
     /**
      * 毫秒内序列(0~4095)
@@ -163,8 +163,8 @@ public class SnowflakeIdWorker {
     protected long timeGen() {
         return System.currentTimeMillis();
     }
-
-    //==============================Test=============================================
+    
+    //===========================================================================
 
     /**
      * 测试
@@ -175,7 +175,7 @@ public class SnowflakeIdWorker {
             long id = idWorker.nextId();
             System.out.println(Long.toBinaryString(id));
             System.out.println(id);
-            String x = "aa".intern();
+            String x = "aa";
         }
     }
 }

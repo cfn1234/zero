@@ -19,7 +19,7 @@ public class TestSteam {
         transactions.add(new Transaction(5, 50, Transaction.Type.GEOCERY));
         transactions.add(new Transaction(2, 20, Transaction.Type.A));
         transactions.add(new Transaction(4, 40, Transaction.Type.C));
-        //sortList(transactions);
+        sortList(transactions);
         parallel(transactions);
     }
     
