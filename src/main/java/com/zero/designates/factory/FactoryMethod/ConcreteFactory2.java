@@ -1,4 +1,4 @@
-package com.zero.designates.factory.abstractfactory;
+package com.zero.designates.factory.FactoryMethod;
 
 /**
  * com.zero.designates.factory.abstractfactory

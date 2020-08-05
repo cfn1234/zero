@@ -2,11 +2,13 @@ package com.zero.designates.factory.abstractfactory;
 
 /**
  * com.zero.designates.factory.abstractfactory
- * 抽象工厂：提供了厂品的生成方法
  *
  * @author caofengnian
- * @date 2020-07-31
+ * @date 2020-08-05
  */
-public interface AbstractFactory {
-    Product newProduct();
+public class Vegetables implements Plant {
+    @Override
+    public void show() {
+    
+    }
 }

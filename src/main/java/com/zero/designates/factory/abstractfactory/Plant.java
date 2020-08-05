@@ -2,11 +2,10 @@ package com.zero.designates.factory.abstractfactory;
 
 /**
  * com.zero.designates.factory.abstractfactory
- * 抽象产品：提供了产品的接口
  *
  * @author caofengnian
- * @date 2020-07-31
+ * @date 2020-08-05
  */
-public interface Product {
+public interface Plant {
     void show();
 }

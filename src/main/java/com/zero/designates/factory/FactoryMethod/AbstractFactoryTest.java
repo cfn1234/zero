@@ -1,4 +1,4 @@
-package com.zero.designates.factory.abstractfactory;
+package com.zero.designates.factory.FactoryMethod;
 
 /**
  * 抽象工厂测试类
