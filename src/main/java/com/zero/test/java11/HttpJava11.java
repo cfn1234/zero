@@ -16,7 +16,7 @@ import java.net.http.HttpResponse;
  */
 public class HttpJava11 {
     public static void main(String[] args) throws Exception {
-        var uri = "http://www.baidu.com";
+        var uri = "https://www.baidu.com";
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(uri))

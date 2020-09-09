@@ -8,6 +8,7 @@
     2.代理模式
     3.观察者模式
     4.原型模式
+    5.建造者模式---com.zero.annotation.bulider
     
 ### 2.spring框架学习
 

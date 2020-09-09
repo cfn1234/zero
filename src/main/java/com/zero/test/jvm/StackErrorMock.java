@@ -7,8 +7,8 @@ package com.zero.test.jvm;
  * @author caofengnian
  * @date 2020-08-21
  */
-
 public class StackErrorMock {
+    
     private static int index = 1;
     
     public static void main(String[] args) {
