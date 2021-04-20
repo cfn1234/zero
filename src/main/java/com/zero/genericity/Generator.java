@@ -7,7 +7,8 @@ package com.zero.genericity;
  * @Date 2019-12-16
  */
 public interface Generator<T> {
-    /**
+
+	/**
      * @return
      */
     T next();
