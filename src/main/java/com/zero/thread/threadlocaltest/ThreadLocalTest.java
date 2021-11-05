@@ -20,6 +20,12 @@ public class ThreadLocalTest {
 		Thread t1 = new Thread(() -> {
 			//设置线程1中本地变量的值
 			localVar.set("localVar1");
+			/*try {
+				TimeUnit.SECONDS.sleep(1);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}*/
+			localVar.set("localVar10");
 			//调用打印方法
 			print("thread1");
 			//打印本地变量
