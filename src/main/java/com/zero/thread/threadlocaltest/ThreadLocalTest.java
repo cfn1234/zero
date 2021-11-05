@@ -25,6 +25,7 @@ public class ThreadLocalTest {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}*/
+
 			localVar.set("localVar10");
 			//调用打印方法
 			print("thread1");
